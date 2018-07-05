@@ -197,10 +197,10 @@ def prepareSmallPickle():
 
     print("done")
 
-# du.csvdirToPickle("../data/csv")
-# applicationPickle()
-# bureauBalancePickle()
-# prepareSmallPickle()
+du.csvdirToPickle("../data/csv")
+applicationPickle()
+bureauBalancePickle()
+prepareSmallPickle()
 bureauBalanceLoanPredictPickle()
 debug=False
 numBoostRounds=5000
