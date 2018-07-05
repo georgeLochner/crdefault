@@ -1,0 +1,44 @@
+Pipeline:
+    Visualize numerical/categorical
+    For numerical data - look for correlations clusters-
+        Plot and consider appropriate transform
+            Create features-coord transform / svm / clustering?
+    Build pruned feature sets
+
+
+
+On 70% of data:
+Build model by randomly adding features,
+    -what should be criteria to keep? Gain, pval, mean/std?
+
+on 30%:
+Compare pruned model with baseline containing all features
+
+Step 3:
+How does tree growing change, when increasing leaves/depth? Is size of tree imposing constraint on num features
+
+
+Derived ratios
+    Do they add value? e.g. ext_sources - negative impact in presence of other vars, but alone added more value than others on their own
+        Test ext_sources_mean vs other ext sources in all combinations
+    Modify test to get comparative score for each cross validation set, with and without feature
+        then get sample per validation set
+
+Might combine the dropped FLAG_DOCUMENT_X fields - eg kurtosis
+
+#AMT_INCOME_TOTAL - outlier in train
+
+#AMT_CREDIT_BUREAU_XXX - very few samples, consider convert to cat = true if > 0 for < QRT
+
+# ELEVATORS_AVG floAT?
+# FLOORSMAX_AVG floAT?
+# HOUR_APPR_PROCESS_START - HOW TO CONVERT THIS?
+# YEARS_BEGINEXPLUATATION_AVG consider binary ==1or 0
+
+# OWN_CAR_AGE = 0? SPIKE AT 60
+#DEF_30_CNT_SOCIAL_CIRCLE outlier > 12
+# DEF_60_CNT_SOCIAL_CIRCLE outlier > 10
+# OBS_30_CNT_SOCIAL_CIRCLE >50
+# OBS_60_CNT_SOCIAL_CIRCLE >50
+#AMT_CREDIT_BUREAU_QRT outlier in train >10
+#DAYS_EMPLOYED df['DAYS_EMPLOYED'].replace(365243, np.nan, inplace= True) + add binary column
